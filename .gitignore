@@ -34,10 +34,10 @@ exclude
 sync_from_bitrix.sh
 
 ### Composer ###
-composer.phar
-/vendor/
-.config
-.local
+/local/php_interface/composer.phar
+/local/php_interface/vendor/
+/local/php_interface/.config
+/local/php_interface/.local
 
 ### PhpStorm ###
 .idea/
