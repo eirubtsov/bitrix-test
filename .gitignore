@@ -1,0 +1,46 @@
+### 1C-Bitrix ###
+# core
+/bitrix/
+
+# uploaded files
+/upload/
+
+# other files
+test.php
+*.zip
+*.gzip
+*.gz
+*.tgz
+*.tar
+*.gz.[0-9]
+*.sql
+*.log
+*.mp3
+*.exe
+*.db
+*.csv
+*.xml
+*.psd
+*.[oa]
+*~
+
+# custom
+/test/
+/robots.txt
+/sitemap.xml
+!/local/php_interface/migrations/**/*.xml
+!/local/php_interface/migrations/*.xml
+exclude
+sync_from_bitrix.sh
+
+### Composer ###
+composer.phar
+/vendor/
+.config
+.local
+
+### PhpStorm ###
+.idea/
+
+### VisualStudioCode ###
+.vscode/
