@@ -6,9 +6,6 @@
 !/local/php_interface/migrations/*/*.xml
 /local/imports/
 /local/logs/
-/local/vendor
-/local/composer.phar
-/local/composer
 
 /*/*/robots.txt
 /*/robots.txt
@@ -43,8 +40,12 @@ etmp/
 Thumbs.db
 .DS_Store
 ._.DS_Store
-*/test
+/test
 *.access.php
 storage.php
 
 adminer*.php
+
+/local/vendor
+/local/composer.phar
+!/local/composer.lock
