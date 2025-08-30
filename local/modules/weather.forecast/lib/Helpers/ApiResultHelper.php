@@ -49,7 +49,7 @@ class ApiResultHelper
     public static function buildExceptionResult(Throwable $exception, array $additionalContext = []): ApiResultDTO
     {
         $context = [
-            'status' => $exception->getCode() ?: 500,
+            'statusCode' => $exception->getCode() ?: 500,
             'exception' => $exception::class,
             'message' => $exception->getMessage(),
             'file' => "{$exception->getFile()}:{$exception->getLine()}",
