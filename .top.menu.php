@@ -1,7 +1,14 @@
 <?
 $aMenuLinks = Array(
+    Array(
+        "Прогноз погоды в городе",
+        "weather-widget/",
+        Array(),
+        Array(),
+        ""
+    ),
 	Array(
-		"О компании", 
+		"О компании",
 		"about/", 
 		Array(), 
 		Array(), 
