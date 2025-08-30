@@ -14,6 +14,7 @@ use Bitrix\Main\Context;
 use Bitrix\Main\HttpApplication;
 use Bitrix\Main\Loader;
 use Bitrix\Main\LoaderException;
+use Weather\Forecast\Enums\UnitsEnum;
 
 IncludeModuleLangFile(__FILE__);
 
@@ -35,12 +36,18 @@ if ($rights < 'R') {
     $APPLICATION->AuthForm(GetMessage('ACCESS_DENIED'));
 }
 
+// Собираем значения допустимых метрик из enum.
+$unitValues = [];
+foreach (UnitsEnum::cases() as $case) {
+    $unitValues[$case->value] = $case->description();
+}
+
 /**
  * Категории настроек (tabs)
  */
 $aTabs = [
     [
-        'DIV' => 'main',
+        'DIV' => 'api',
         'TAB' => 'Настройки API',
         'ICON' => '',
         'TITLE' => 'Настройки API',
@@ -56,6 +63,26 @@ $aTabs = [
                 'Ключ API',
                 '',
                 ['password', 50],
+            ],
+        ],
+    ],
+    [
+        'DIV' => 'weather',
+        'TAB' => 'Настройки отображения',
+        'ICON' => '',
+        'TITLE' => 'Настройки отображения',
+        'OPTIONS' => [
+            [
+                'weather_city',
+                'Город',
+                'Москва',
+                ['text', 50],
+            ],
+            [
+                'weather_units',
+                'Единицы измерения',
+                UnitsEnum::METRIC->value,
+                ['selectbox', $unitValues],
             ],
         ],
     ],
